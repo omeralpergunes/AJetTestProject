@@ -4,15 +4,15 @@ Bu proje, **A Jet Havayolu** web sitesi için **Selenium** ve **Cucumber** kulla
 
 ## 🛠️ KULLANILAN TEKNOLOJİLER
 
-- **Selenium WebDriver**: Web tarayıcı etkileşimlerini otomatikleştirmek için kullanıldı.
-- **Cucumber**: Test senaryolarını **Gherkin** dilinde yazmak için kullanıldı.
-- **JUnit**: Testlerin çalıştırılması ve raporlanması için kullanıldı.
-- **Java**: Test script'lerini yazmak için kullanılan programlama dili.
-- **Maven**: Proje bağımlılıklarını yönetmek için kullanıldı.
+- **Selenium WebDriver**: Web tarayıcı etkileşimlerini otomatikleştirmek için kullanıyoruz.
+- **Cucumber**: Test senaryolarını **Gherkin** dilinde yazmak için kullanıyoruz.
+- **JUnit**: Testlerin çalıştırılması ve raporlanması için kullanıyoruz.
+- **Java**: Test script'lerimizi yazmamız için kullandığımız programlama dili.
+- **Maven**: Proje bağımlılıklarını yönetmek için kullanıyoruz.
 
 ## 💻 IDE
 
-- **IntelliJ IDEA**: Test geliştirme ve çalıştırma işlemleri için tercih edilen IDE.
+- **IntelliJ IDEA**: Test geliştirme ve çalıştırma işlemleri için bu IDE'yi tercih ettik.
 
 ## 🎯 AMACIMIZ
 
