@@ -14,6 +14,6 @@ Bu proje, **A Jet Havayolu** web sitesi için **Selenium** ve **Cucumber** kulla
 
 - **IntelliJ IDEA**: Test geliştirme ve çalıştırma işlemleri için tercih edilen IDE.
 
-## 🎯 AMAÇ
+## 🎯 AMACIMIZ
 
-- Web sitesinin **uçuş arama**, **rezervasyon** ve **form doğrulama** gibi temel işlevlerinin doğru çalışıp çalışmadığını test etmek ve güvenilirliğini sağlamak.
+- AJet Web sitesinin **kullanıcı giriş-kayıt işlemleri**, **uçuş arama**, **rezervasyon** ve **form doğrulama** gibi temel işlevlerinin doğru çalışıp çalışmadığını test etmek ve güvenilirliğini sağlamak.
