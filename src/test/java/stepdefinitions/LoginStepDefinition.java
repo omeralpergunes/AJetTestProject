@@ -5,10 +5,16 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.LoginPage;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class LoginStepDefinition {
@@ -59,5 +65,4 @@ public class LoginStepDefinition {
     public void close_to_browser(){
         driver.close(); // Tarayıcıyı kapatıyoruz
     }
-
 }

@@ -1,33 +1,25 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class SignUpPage {
     WebDriver driver;
 
-    // WebDriver parametre olarak alınıyor
-    public LoginPage(WebDriver driver) {
+    public SignUpPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this); // Elementleri başlatıyoruz
     }
 
     @FindBy(xpath = "//*[@class='material-icons md-20']")
-    public WebElement loginClick;
+    public WebElement loginHomeClick;
 
-    @FindBy(xpath = "//*[@class='p-inputmask p-inputtext p-component w-full']")
-    public WebElement phoneLogin;
+    @FindBy(xpath = "//*[@class='aj-button secondary large w-full']")
+    public WebElement signUpClick;
 
-    @FindBy(xpath = "//*[@type='password']")
-    public WebElement passwordLogin;
-
-    @FindBy(xpath = "//*[@class='aj-button primary large w-full']")
-    public WebElement userLoginClick;
-
-    @FindBy(xpath = "//*[@name='firstName']")
+  /*  @FindBy(xpath = "//*[@name='firstName']")
     public WebElement signUpUserName;
 
     @FindBy(xpath = "//*[@name='lastName']")
@@ -36,7 +28,7 @@ public class LoginPage {
     @FindBy(xpath = "//*[@id='dateOfBirth']")
     public WebElement birthDay;
 
-   /* @FindBy(xpath = "//*[@id='gender2']")
+    @FindBy(xpath = "//*[@id='gender2']")
     public WebElement gender;
 
     @FindBy(xpath = "//*[@name='username-phone-number']")
@@ -47,5 +39,4 @@ public class LoginPage {
 
     @FindBy(xpath = "//*[@type='password']")
     public WebElement passwordSignUp;*/
-
 }
