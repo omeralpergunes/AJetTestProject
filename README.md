@@ -17,3 +17,11 @@ Bu proje, **A Jet Havayolu** web sitesi için **Selenium** ve **Cucumber** kulla
 ## 🎯 AMACIMIZ
 
 - AJet Web sitesinin **kullanıcı giriş-kayıt işlemleri**, **uçuş arama**, **rezervasyon** ve **form doğrulama** gibi temel işlevlerinin doğru çalışıp çalışmadığını test etmek ve güvenilirliğini sağlamak.
+
+
+## ŞU AN HANGİ AŞAMADAYIZ?
+
+📅 22 Mart 2025 
+
+❓ Login feature'dan sonra SignUp feature'ımızı yazıyoruz. SignUp değerlerimizin page ve stepDef'i üzerinde de çalışmalar devam ediyor...
+
