@@ -5,16 +5,10 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.LoginPage;
 
-import java.time.Duration;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import pages.LoginPage;
 import java.util.concurrent.TimeUnit;
 
 public class LoginStepDefinition {
@@ -32,13 +26,14 @@ public class LoginStepDefinition {
 
     @Given("User goes to homepage")
     public void user_goes_to_homepage() throws InterruptedException {
-        driver.get("http://ajet.com/"); // WebDriver üzerinden get() metodunu çağırıyoruz
+        driver.get("https://ajet.com"); // WebDriver üzerinden get() metodunu çağırıyoruz
         Thread.sleep(2000); // Sayfa yüklenmesini bekliyoruz
     }
 
     @Then("User click to login")
-    public void user_click_to_login(){
+    public void user_click_to_login() throws InterruptedException {
         loginPage.loginClick.click();
+        Thread.sleep(2000);
     }
 
     @And("Enters mobile phone information")

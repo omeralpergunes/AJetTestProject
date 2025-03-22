@@ -6,17 +6,17 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"pretty",
-                "html:target/default-cucumber-reports.html",
-                "json:target/json-reports/cucumber1.json",
-                "junit:target/xml-report/cucumber.xml",
-                "rerun:TestOutput/failed_scenario.txt"},
+        plugin = {
+                "pretty",
+                "html:target/cucumber-reports/cucumber.html",
+                "json:target/cucumber-reports/cucumber.json",
+                "junit:target/cucumber-reports/cucumber.xml"
+        },
         features = "src/test/resources/features",
         glue = {"stepdefinitions"},
-        tags = "",
-        dryRun = false,
-        monochrome = false
+        tags = "@Sign", // Örnek: yalnızca @smokeTest tag'ine sahip senaryoları çalıştırır
+        dryRun = false, // Gerçekten testleri çalıştırır
+        monochrome = true // Konsol çıktısının daha temiz olmasını sağlar
 )
 public class TestRunner {
-
 }
