@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import hooks.Hooks;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -34,4 +35,10 @@ public class LanguageStepDef {
     public void click_on_the_second_language() {
        languagePage.selectSecondLanguage();
 
-   }}
+   }
+   @And("User close the browser")
+    public void close_the_browser() {
+        driver.close();
+    }
+
+}

@@ -4,4 +4,4 @@ Feature: AJet Different Language
     Given User language go to homepage
     When Click on the language button
    Then Click on the second language
-    # And Close the browser
+    And User close the browser

@@ -14,7 +14,6 @@ public class SignPage {
         PageFactory.initElements(driver,this);
     }
 
-
     @FindBy(xpath = "//*[@name='firstName']")
     public WebElement firstName;
 
@@ -35,7 +34,6 @@ public class SignPage {
 
     @FindBy(xpath = "//*[@type='password']")
     public WebElement password;
-
 
     @FindBy(xpath = "//*[@class='grid mt-40']")
     public WebElement signUpClick;

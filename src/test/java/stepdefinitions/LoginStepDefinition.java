@@ -16,8 +16,8 @@ public class LoginStepDefinition {
 
     @Given("User goes to homepage")
     public void user_goes_to_homepage() throws InterruptedException {
-        driver.get("https://ajet.com"); // WebDriver üzerinden get() metodunu çağırıyoruz
-        Thread.sleep(2000); // Sayfa yüklenmesini bekliyoruz
+        driver.get("https://ajet.com");
+        Thread.sleep(2000);
     }
 
     @Then("User click to login")
@@ -29,14 +29,14 @@ public class LoginStepDefinition {
     @And("Enters mobile phone information")
     public void enters_mobile_phone_information() throws InterruptedException {
         loginPage.phoneLogin.click();
-        loginPage.phoneLogin.sendKeys("5537688013");
+        loginPage.phoneLogin.sendKeys("55555555555");
         Thread.sleep(1200);
     }
 
     @When("Enters password information")
     public void enters_password_information() throws InterruptedException {
         loginPage.passwordLogin.click();
-        loginPage.passwordLogin.sendKeys("Malatya*77");
+        loginPage.passwordLogin.sendKeys("Sifremiz123");
         Thread.sleep(1500);
     }
 
@@ -48,6 +48,6 @@ public class LoginStepDefinition {
 
     @And("Close to browser")
     public void close_to_browser(){
-        driver.close(); // Tarayıcıyı kapatıyoruz
+        driver.close();
     }
 }

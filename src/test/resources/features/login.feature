@@ -1,3 +1,4 @@
+@Login
 Feature: US01 AJet Login
   Scenario: TC01 - Login with registered User information
     Given User goes to homepage

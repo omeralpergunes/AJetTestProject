@@ -13,12 +13,10 @@ public class Hooks {
     @Before
     public void setUp() {
         if (driver == null) {
-            WebDriverManager.chromedriver().setup(); // ChromeDriver'ı otomatik indir ve ayarla
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-            System.out.println("WebDriver başarıyla başlatıldı.");
-
         }
     }
 }
