@@ -21,7 +21,7 @@ Bu proje, **A Jet Havayolu** web sitesi için **Selenium** ve **Cucumber** kulla
 
 ## ŞU AN HANGİ AŞAMADAYIZ?
 
-📅 22 Mart 2025 
+📅 24 Mart 2025 
 
-❓ Login feature'dan sonra SignUp feature'ımızı yazıyoruz. SignUp değerlerimizin page ve stepDef'i üzerinde de çalışmalar devam ediyor...
+❓ Language (Dil) alanı test işlemlerimizi tamamladık.
 
