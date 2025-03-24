@@ -13,8 +13,8 @@ import org.junit.runner.RunWith;
                 "junit:target/cucumber-reports/cucumber.xml"
         },
         features = "src/test/resources/features",
-        glue = {"stepdefinitions"},
-        tags = "@Sign", // Örnek: yalnızca @smokeTest tag'ine sahip senaryoları çalıştırır
+        glue = {"stepdefinitions", "hooks"},
+        tags = "@Language", // Örnek: yalnızca @smokeTest tag'ine sahip senaryoları çalıştırır
         dryRun = false, // Gerçekten testleri çalıştırır
         monochrome = true // Konsol çıktısının daha temiz olmasını sağlar
 )

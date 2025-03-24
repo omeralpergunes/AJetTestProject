@@ -1,30 +1,19 @@
 package stepdefinitions;
 
-import io.cucumber.java.Before;
+import hooks.Hooks;
 import io.cucumber.java.en.*;
-import org.junit.After;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.SignPage;
-
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
+
 
 public class SignStepDef {
 
-     WebDriver driver;
+     WebDriver driver= Hooks.driver;
      SignPage signPage;
-
-    @Before
-    public void setUp() {
-        driver = new ChromeDriver();
-        signPage = new SignPage(driver); // WebDriver'ı LoginPage'e geçiriyoruz
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-    }
 
     @Given("User go to homepage")
     public void userGoToHomepage() throws InterruptedException {

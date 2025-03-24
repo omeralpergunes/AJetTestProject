@@ -1,28 +1,18 @@
 package stepdefinitions;
 
-import io.cucumber.java.Before;
+import hooks.Hooks;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pages.LoginPage;
-import java.util.concurrent.TimeUnit;
 
 public class LoginStepDefinition {
 
-    WebDriver driver;
+    WebDriver driver = Hooks.driver;
     LoginPage loginPage;
-
-    @Before
-    public void setUp() {
-        // WebDriver'ı başlatıyoruz ve LoginPage'i parametre olarak geçiyoruz.
-        driver = new ChromeDriver();
-        loginPage = new LoginPage(driver); // WebDriver'ı LoginPage'e geçiriyoruz
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
 
     @Given("User goes to homepage")
     public void user_goes_to_homepage() throws InterruptedException {
