@@ -45,18 +45,18 @@ public class SignStepDef {
     @And("Enter your phoneNumber")
     public void enter_your_phone_number() throws InterruptedException {
         signPage.usernamePhone.click();
-        signPage.usernamePhone.sendKeys("5537688013");
+        signPage.usernamePhone.sendKeys("555555555"); // telefon ornektir
         Thread.sleep(1500);
     }
     @And("Enter your email")
     public void enter_your_email() throws InterruptedException {
-        signPage.email.sendKeys("omeralpergunes@gmail.com");
+        signPage.email.sendKeys("abcdefgm@gmail.com"); //Mail degeri ornektir.
         Thread.sleep(1500);
 
     }
     @And("Enter your password")
     public void enter_your_password() throws InterruptedException {
-        signPage.password.sendKeys("Gunes*44wien");
+        signPage.password.sendKeys("sifremiz123"); // Sifre degerimiz ornektir.
         Actions action = new Actions(driver);
         action.sendKeys(Keys.TAB).sendKeys(Keys.TAB).perform();
         action.sendKeys(Keys.SPACE).perform();

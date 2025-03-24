@@ -5,3 +5,7 @@ Feature: AJet Different Language
     When Click on the language button
    Then Click on the second language
     And User close the browser
+
+
+    #Language.feature islemlerimizi tamamladik. Anasayfadaki test islemlerimizi
+  # bitirdikten sonra alt sayfalara da giris yapacagiz
