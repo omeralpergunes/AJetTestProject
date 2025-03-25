@@ -21,7 +21,7 @@ Bu proje, **A Jet Havayolu** web sitesi için **Selenium** ve **Cucumber** kulla
 
 ## ŞU AN HANGİ AŞAMADAYIZ?
 
-📅 24 Mart 2025 
+📅 25 Mart 2025 
 
-❓ Language (Dil) alanı test işlemlerimizi tamamladık.
+❓ Home Menu (Anasayfa Üst Menüler) alanlarının tıklanılabilirliğine yönelik test işlemlerimizi tamamladık. Ayrıca anasayfa üzerindeki Uçuş Ayarları (Check-In, Uçuş Ara, Uçuş Yönetimi) gibi değerlerin testlerine ilk adımımızı attık. Çalışmalarımız her gün devam edecektir... 
 
