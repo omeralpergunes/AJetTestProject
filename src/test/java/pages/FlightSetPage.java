@@ -1,6 +1,7 @@
 package pages;
 
 import hooks.Hooks;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,6 +21,37 @@ public class FlightSetPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//*[@aria-controls='pv_id_3_1_content']")
-    public WebElement checkIn;
+    @FindBy(id = "pv_id_3_1_header_action")
+    public WebElement checkInButton;
+    public void clickCheckIn() {
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", checkInButton);
+    }
+
+    @FindBy(id = "pv_id_3_2_header_action")
+    public WebElement flightManagementButton;
+    public void clickFlightManagement() {
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", flightManagementButton);
+    }
+
+    @FindBy(id = "pv_id_3_3_header_action")
+    public WebElement flightStatusButton;
+    public void clickFlightStatus() {
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", flightStatusButton);
+    }
+
+    @FindBy(xpath = "//div[contains(@class, 'slider') or contains(@class, 'carousel')]//div[contains(@class, 'active')]\n")
+    public WebElement slider;
+
+
+    // Slider Next Button
+    @FindBy(xpath = "//*[@class='swp swp-next']")
+    public WebElement sliderNextButton;
+
+    public void clickSliderNext() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", sliderNextButton);
+    }
 }

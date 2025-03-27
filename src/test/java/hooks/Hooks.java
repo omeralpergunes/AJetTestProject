@@ -12,11 +12,15 @@ public class Hooks {
 
     @Before
     public void setUp() {
-        if (driver == null) {
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-            driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().window().maximize();
+    }
+
+    @After
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
         }
     }
 }
