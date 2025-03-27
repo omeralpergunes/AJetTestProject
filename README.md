@@ -23,5 +23,10 @@ Bu proje, **A Jet Havayolu** web sitesi için **Selenium** ve **Cucumber** kulla
 
 📅 25 Mart 2025 
 
-❓ Home Menu (Anasayfa Üst Menüler) alanlarının tıklanılabilirliğine yönelik test işlemlerimizi tamamladık. Ayrıca anasayfa üzerindeki Uçuş Ayarları (Check-In, Uçuş Ara, Uçuş Yönetimi) gibi değerlerin testlerine ilk adımımızı attık. Çalışmalarımız her gün devam edecektir... 
+❓ Flight (Uçuş Ayarları) alanlarının tıklanılabilirliğine yönelik test işlemlerimizi tamamladık. Çalışmalarımız her gün devam edecektir... 
+
+Projemizin son feature'nin html uzantısında report dosyası bu şekildedir.
+
+![image](https://github.com/user-attachments/assets/38a61f28-aa80-409a-9d12-aaac6eea7d44)
+
 
