@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
                 "pretty",
                 "html:target/cucumber-reports/cucumber.html",
                 "json:target/cucumber-reports/cucumber.json",
-                "junit:target/cucumber-reports/cucumber.xml"
+                "junit:target/cucumber-reports/cucumber.xml"    
         },
         features = "src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},

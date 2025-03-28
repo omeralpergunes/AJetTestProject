@@ -22,3 +22,13 @@ Feature: Flight Settings Tests
     Given User goes to site
     When Click on the slider right
     Then Close the browser
+
+  Scenario: TC-11 Flight Search
+    Given User goes to site
+    When Select the one way
+    Then Enter the value for the departure airport
+    Then Select the airport to arrival
+   # Then Select departure date
+   # Then Determine the number of passengers arriving
+    Then Click on the search flight button
+    And Close the browser

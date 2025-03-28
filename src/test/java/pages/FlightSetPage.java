@@ -54,4 +54,21 @@ public class FlightSetPage {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", sliderNextButton);
     }
+
+    @FindBy(xpath = "//*[@class='p-radiobutton p-component']")
+    public WebElement oneway;
+    public void clickOneway() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", oneway);
+    }
+
+    @FindBy(xpath = "//*[@for='departure-input']")
+    public WebElement departureAirport;
+
+    @FindBy(xpath = "//*[@for='arrival-input']")
+    public WebElement arrivalAirport;
+
+    @FindBy(xpath = "//*[@class='aj-button primary large search-button']")
+    public WebElement searchFlight;
+
 }
