@@ -21,12 +21,12 @@ Bu proje, **A Jet Havayolu** web sitesi için **Selenium** ve **Cucumber** kulla
 
 ## ŞU AN HANGİ AŞAMADAYIZ?
 
-📅 25 Mart 2025 
+📅 28 Mart 2025 
 
-❓ Flight (Uçuş Ayarları) alanlarının tıklanılabilirliğine yönelik test işlemlerimizi tamamladık. Çalışmalarımız her gün devam edecektir... 
+❓ Flight (Uçuş Ayarları) alanlarının tıklanılabilirliğine yönelik test işlemlerimizi tamamladık. "Uçuş Ara" sisteminin testleri yapıldı. Kalkış (Departure) - İniş (Arrival) bölümlerinin çalıştığı doğrulandı. Çalışmalarımız her gün devam edecektir... 
 
 Projemizin son feature'nin html uzantısında report dosyası bu şekildedir.
 
-![image](https://github.com/user-attachments/assets/38a61f28-aa80-409a-9d12-aaac6eea7d44)
+![image](https://github.com/user-attachments/assets/c24470b6-0621-4a9f-9a00-a63ebfc7f759)
 
 
