@@ -71,4 +71,43 @@ public class FlightSetPage {
     @FindBy(xpath = "//*[@class='aj-button primary large search-button']")
     public WebElement searchFlight;
 
+    @FindBy(xpath = "//input[contains(@class, 'dp__input')]")
+    public WebElement datePicker;
+
+    @FindBy(xpath = "//div[@id='2025-03-30']")
+    public WebElement datePickerNext;
+
+    @FindBy(xpath = "//*[@id='2025-03-31']")
+    public WebElement datePickerPrev;
+
+    @FindBy(xpath = "//*[@id='passenger']")
+    public WebElement passenger;
+
+    @FindBy(xpath = "//*[@aria-label='Çocuk Artır']")
+    public WebElement passengerAdd;
+
+    @FindBy(xpath = "//*[@for='roundtrip']")
+    public WebElement roundTrip;
+
+    @FindBy(xpath = "(//*[contains(@class, 'date-picker')])[2]")
+    public WebElement returnDate;
+
+    @FindBy(xpath = "//*[@id='bookingId']")
+    public WebElement ticketCheckIn;
+
+    @FindBy(xpath = "//*[@name='surname']")
+    public WebElement ticketCheckSurname;
+
+    @FindBy(xpath = "//*[@class='aj-button primary large w-full']")
+    public WebElement checkInSearch;
+
+    @FindBy(id = "goToRouteList")
+    public WebElement routeSearchButton;
+
+    @FindBy(xpath = "//*[@for='undefined-input']")
+    public WebElement undefinedFromInput;
+
+    @FindBy(xpath = "//*[@class='el-select__selected-item el-select__placeholder is-transparent']")
+    public WebElement arrivalInput;
+
 }

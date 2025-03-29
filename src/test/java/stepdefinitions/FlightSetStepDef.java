@@ -5,10 +5,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.FlightSetPage;
 import java.time.Duration;
+import java.util.List;
 
 public class FlightSetStepDef {
 
@@ -88,7 +90,7 @@ public class FlightSetStepDef {
 
             Thread.sleep(2000);
         } catch (Exception e) {
-            System.out.println("Error while interacting with the departure input: " + e.getMessage());
+            System.out.println("Hata!!: " + e.getMessage());
         }
     }
 
@@ -114,23 +116,193 @@ public class FlightSetStepDef {
             Thread.sleep(2000);
 
         } catch (Exception e) {
-            System.out.println("Error while interacting with the departure input: " + e.getMessage());
+            System.out.println("Hata!!!: " + e.getMessage());
         }
+    }
+
+    @Then("Select departure date")
+    public void select_departure_date() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        flightSetPage.datePicker.click();
+        Thread.sleep(2000);
+        try {
+            WebElement nextButton = wait.until(ExpectedConditions.elementToBeClickable(flightSetPage.datePickerNext));
+            nextButton.click();
+        } catch (Exception e) {
+            System.out.println("İşlem gerçekleşmedi. Lütfen tekrar deneyin.");
+        }
+        WebElement dateFlight = wait.until(ExpectedConditions.elementToBeClickable(flightSetPage.datePickerNext));
+
+        JavascriptExecutor dateJs = (JavascriptExecutor) driver;
+        dateJs.executeScript("arguments[0].click();", dateFlight);
+    }
+
+    @Then("Determine the number of passengers arriving")
+    public void determine_number_of_passengers_arriving() throws InterruptedException {
+        flightSetPage.passenger.click();
+        Thread.sleep(1000);
+        flightSetPage.passengerAdd.click();
+        Actions actions = new Actions(driver);
+        actions.sendKeys(Keys.ESCAPE).perform();
+        Thread.sleep(1000);
+    }
+
+
+    @Then("Select the round trip")
+    public void select_the_round_trip() throws InterruptedException {
+        flightSetPage.roundTrip.click();
+    }
+
+    @Then("Select return date")
+    public void select_return_date() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        js.executeScript("document.activeElement.blur();");
+        Thread.sleep(1000);
+
+        js.executeScript("arguments[0].click();", flightSetPage.returnDate);
+        Thread.sleep(2000);
+
+        try {
+            WebElement prevButton = wait.until(ExpectedConditions.elementToBeClickable(flightSetPage.datePickerPrev));
+            prevButton.click();
+        } catch (Exception e) {
+            System.out.println("Tarihe tıklandı.");
+        }
+
+        WebElement returnDate = wait.until(ExpectedConditions.elementToBeClickable(flightSetPage.datePickerPrev));
+        js.executeScript("arguments[0].click();", returnDate);
     }
 
     @Then("Click on the search flight button")
     public void click_on_the_search_flight_button() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-
+        JavascriptExecutor search = (JavascriptExecutor) driver;
         WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(flightSetPage.searchFlight));
-
         searchButton.click();
-        System.out.println("Uçuş arama butonuna basıldı!");
-
-        wait.until(driver -> js.executeScript("return document.readyState").equals("complete"));
-        System.out.println("Sayfa tamamen yüklendi!");
-
+        wait.until(driver -> search.executeScript("return document.readyState").equals("complete"));
         Thread.sleep(5000);
     }
-}
+
+     @Then("Access ticket area")
+     public void access_ticket_area() throws InterruptedException {
+        flightSetPage.ticketCheckIn.click();
+        Thread.sleep(1000);
+        flightSetPage.ticketCheckIn.sendKeys("14ALFGKG");
+     }
+
+     @Then("Enter a value in the lastname field")
+    public void enter_a_value_in_the_lastname_field() throws InterruptedException {
+        flightSetPage.ticketCheckSurname.click();
+        Thread.sleep(1000);
+        flightSetPage.ticketCheckSurname.sendKeys("GÜNEŞ");
+        Thread.sleep(1000);
+     }
+
+     @Then("Click on the search button")
+    public void click_on_the_search_button() throws InterruptedException {
+        flightSetPage.checkInSearch.click();
+        Thread.sleep(2000);
+     }
+
+     @Then("Access pnr area")
+    public void access_pnr_area() throws InterruptedException {
+         flightSetPage.ticketCheckIn.click();
+         Thread.sleep(1000);
+         flightSetPage.ticketCheckIn.sendKeys("14ALFGKG5698664");
+
+     }
+     @Then("Click on the route search")
+    public void click_on_the_route_search() throws InterruptedException {
+         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+         try {
+             wait.until(ExpectedConditions.presenceOfElementLocated(By.id("goToRouteList")));
+             WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(flightSetPage.routeSearchButton));
+             searchButton.click();
+
+         } catch (TimeoutException e) {
+             System.out.println("Hata!! İstenen zaman da çalışmadı..");
+         } catch (Exception e) {
+             System.out.println("Tıklanmıyor!!: " + e.getMessage());
+         }
+     }
+
+     @Then("Enter the value for the departure")
+     public void enter_the_value_for_the_departure() throws InterruptedException {
+         try {
+             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+             JavascriptExecutor js = (JavascriptExecutor) driver;
+
+             WebElement undefinedLabel = wait.until(ExpectedConditions.elementToBeClickable(flightSetPage.undefinedFromInput));
+
+             js.executeScript("arguments[0].click();", undefinedLabel);
+
+             WebElement undefinedInput = driver.findElement(By.id("undefined-input"));
+
+             wait.until(ExpectedConditions.elementToBeClickable(undefinedInput));
+
+             undefinedInput.clear();
+             undefinedInput.sendKeys("Ankara");
+             Thread.sleep(1000);
+             undefinedInput.sendKeys(Keys.DOWN);
+             undefinedInput.sendKeys(Keys.ENTER);
+             Thread.sleep(1000);
+             undefinedInput.sendKeys(Keys.TAB);
+             undefinedInput.sendKeys(Keys.ENTER);
+
+         } catch (Exception e) {
+             System.out.println("Hata!!: " + e.getMessage());
+         }
+     }
+
+     @Then("Enter the value for arrival")
+     public void enter_the_value_for_arrival() throws InterruptedException {
+         try {
+             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+             JavascriptExecutor js = (JavascriptExecutor) driver;
+
+             WebElement arrivalLabel = wait.until(ExpectedConditions.elementToBeClickable(flightSetPage.arrivalInput));
+             js.executeScript("arguments[0].click();", arrivalLabel);
+
+             List<WebElement> undefinedInputs = driver.findElements(By.id("undefined-input"));
+
+             if (undefinedInputs.size() > 1) {
+                 WebElement secondUndefinedInput = undefinedInputs.get(1);
+
+                 wait.until(ExpectedConditions.elementToBeClickable(secondUndefinedInput));
+
+                 secondUndefinedInput.clear();
+                 secondUndefinedInput.sendKeys("İzmir");
+                 Thread.sleep(1000);
+
+                 secondUndefinedInput.sendKeys(Keys.DOWN);
+                 secondUndefinedInput.sendKeys(Keys.ENTER);
+                 Thread.sleep(1000);
+
+             } else {
+                 System.out.println(" Değer bulunamadı!");
+             }
+         } catch (Exception e) {
+             System.out.println("Hata!!: " + e.getMessage());
+         }}
+
+
+     @Then("Select the departure date")
+     public void select_the_departure_date() throws InterruptedException {
+         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+         flightSetPage.datePicker.click();
+         Thread.sleep(2000);
+         try {
+             WebElement nextButton = wait.until(ExpectedConditions.elementToBeClickable(flightSetPage.datePickerNext));
+             nextButton.click();
+         } catch (Exception e) {
+             System.out.println("İşlem gerçekleşmedi. Lütfen tekrar deneyin.");
+         }
+         WebElement dateFlight = wait.until(ExpectedConditions.elementToBeClickable(flightSetPage.datePickerNext));
+
+         JavascriptExecutor dateJs = (JavascriptExecutor) driver;
+         dateJs.executeScript("arguments[0].click();", dateFlight);
+     }
+     }
