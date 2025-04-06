@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
-        tags = "@Flight", // Örnek: yalnızca @smokeTest tag'ine sahip senaryoları çalıştırıyoruz
+        tags = "@Additional", // Örnek: yalnızca @smokeTest tag'ine sahip senaryoları çalıştırıyoruz
         dryRun = false, // Gerçekten testleri çalıştırıyoruz
         monochrome = true // Konsol çıktısının daha temiz olmasını sağlıyoruz.
 )

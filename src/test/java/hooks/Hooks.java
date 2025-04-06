@@ -17,10 +17,10 @@ public class Hooks {
         driver.manage().window().maximize();
     }
 
-   @After
+  /* @After
     public void tearDown() {
         if (driver != null) {
             driver.quit();
         }
-    }
+    }*/
 }
